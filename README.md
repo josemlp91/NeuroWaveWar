@@ -1,7 +1,7 @@
 NeuroWaveWar
 ============
 
-Guerra ondas mentales, juego que consiste en realizar competiciónes de Atencion cerebral, o meditación usando el dispositivo NeuroWabe.
+Guerra ondas mentales, juego que consiste en realizar competiciónes de Atencion cerebral, o meditación usando el dispositivo NeuroWave.
 
 Implementación en processing:
 
