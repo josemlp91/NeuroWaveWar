@@ -3,6 +3,12 @@
 // for graphing
 import processing.serial.*;
 import java.util.Iterator;
+import processing.net.*;
+
+
+Server myServer;
+int val = 0;
+
 
 eegPort eeg;
 Serial serialPort;
@@ -22,6 +28,9 @@ int width = 800, height = 600;
 
 void setup() {
   size(width, height);
+  
+  myServer = new Server(this, 5210);
+   
   font = loadFont("HelveticaNeue-20.vlw");
   textFont(font);
   
@@ -64,14 +73,12 @@ void drawConnected() {
   text("Poor signal: " + eeg.poorSignal, 5, 60);
   text("Attention: " + eeg.attention, 5, 80);
   text("Meditation: " + eeg.meditation, 5, 100);
-  text("Last event: " + lastEventInterval + " ms ago", 5, 120);
-  text("Raw buffer size: " + eeg.rawDataBuffer.size(), 5, 140);
-  text("Raw data sequence: " + eeg.rawSequence, 5, 160);
-  text("Vector sequence: " + eeg.vectorSequence, 5, 180);
-  text("Vector buffer size: " + eeg.vectorBuffer.size(), 5, 200);
-  text("Serial read state: " + eeg.portReadState, 5, 220);
-  text("Failed checksum count: " + eeg.failedChecksumCount, 5, 240);
-  text("Click mouse for a second to reset", 5, 260);
+
+  if ((eeg.attention)>0){
+    println(eeg.attention);
+    myServer.write(eeg.attention);
+  }
+  //eeg.attention
   
   // Draw signal
   noStroke();
