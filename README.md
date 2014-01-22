@@ -11,4 +11,4 @@ Implementación en processing:
 - Abrir con procesing el archivo /NeuroWaveWar/mindwave/mindwave.pde
 - Intentar ejecutar el programa.
 
-Las intrucciones estan hechas a prisa y corriendo, pero más o menos eso es lo que 
+Las intrucciones estan hechas a prisa y corriendo, pero más o menos esos son los pasos que hay que seguir.
